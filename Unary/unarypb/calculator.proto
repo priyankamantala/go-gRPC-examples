@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package Unary;
+option go_package="Unary/unarypb";
+
+message SumRequest {
+    int32 firstNo = 1;
+    int32 secondNo = 2;
+}
+
+message SumResponse {
+    int32 result = 1;
+}
+
+service CalculatorService {
+    rpc Addition(SumRequest) returns (SumResponse) {}
+}
